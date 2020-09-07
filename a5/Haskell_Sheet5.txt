@@ -1,0 +1,53 @@
+--Haskell Sheet 5 Arnav Singh
+--a)
+
+remainder :: Int -> Int -> Int
+
+remainder a b = mod a b
+
+
+
+toBase :: Int -> Int -> [Int]
+
+toBase n b
+
+| n 'div' b /= 0 = (toBase b (n 'div' b) ++ (remainder a b))
+
+| n 'div' b == 0 = (n:[])
+
+ 
+
+--b)
+
+fromBase :: Int -> [Int] -> Int
+
+frombase b n
+
+|(null n) == false = (fromBase b (tail n) + remainder head n b)
+
+|(null n) == true = 0
+
+ 
+
+--c)
+
+showBase :: Int -> Int -> String
+
+showBase b n
+
+| n 'div' b /=0 = (showBase b (n 'div' b) ++ show(remainder a b))
+
+| n 'div' b == 0 = show n
+
+ 
+ 
+
+--d)
+
+readBase :: Int -> String -> Int
+
+readBase b n
+
+|(null n) == false = (readBase b (tail n) + remainder head read n :: int b)
+
+|(null n) == true = 0

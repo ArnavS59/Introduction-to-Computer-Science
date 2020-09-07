@@ -1,0 +1,11 @@
+import System.IO
+
+ed::String->String->Integer
+    ed ""   "" = 0
+    ed "" str1 = length str1
+    ed str2 "" = length str2
+    ed (x:x2) (y:y2)
+     | x==y = ed x2 y2
+     | otherwise= 1+ minimum [ed x2 (y:y2), ed (x:x2) y, ed x2 y2 ]
+
+    
